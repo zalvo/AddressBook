@@ -69,7 +69,15 @@ export default function App() {
 
   const handleSearch = (e) => {
     let search = e.target.value;
-    setFilteredList(list.filter((contact) => contact.name.includes(search)));
+    setFilteredList(
+      list.filter((contact) => {
+        return (
+          contact.name.includes(search) ||
+          contact.surname.includes(search) ||
+          contact.number.toString().includes(search)
+        );
+      })
+    );
     return;
   };
 

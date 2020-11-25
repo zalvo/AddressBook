@@ -1,31 +1,31 @@
 const persone = [
   {
     id: 1,
-    name: "nome 1",
-    surname: "surname 1",
-    number: 1,
-    email: "email 1"
+    name: "Vienna",
+    surname: "Greco",
+    number: 359574275,
+    email: "vienneco@gmail.com"
   },
   {
     id: 2,
-    name: "nome 2",
-    surname: "surname 2",
-    number: 2,
-    email: "email 2"
+    name: "Keyla",
+    surname: "Bernardi",
+    number: 354649573,
+    email: "kaylrdi@gmail.com"
   },
   {
     id: 3,
-    name: "nome 3",
-    surname: "surname 3",
-    number: 3,
-    email: "email 3"
+    name: "Cristyn",
+    surname: "Giordano",
+    number: 364896957,
+    email: "crisno@gmail.com"
   },
   {
     id: 4,
-    name: "nome 4",
-    surname: "surname 4",
-    number: 4,
-    email: "email 4"
+    name: "Dr. Gianriccardo",
+    surname: "Bellini",
+    number: 844988572,
+    email: "dottgni@gmail.com"
   }
 ];
 
