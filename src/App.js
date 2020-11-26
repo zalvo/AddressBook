@@ -5,7 +5,7 @@ import Details from "./components/Details";
 import Create from "./components/Create";
 import Search from "./components/Search";
 import Container from "react-bootstrap/Container";
-import { Button, Row, Col } from "react-bootstrap";
+import { Button, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./styles.css";
@@ -68,12 +68,12 @@ export default function App() {
   };
 
   const handleSearch = (e) => {
-    let search = e.target.value;
+    let search = e.target.value.toLocaleLowerCase();
     setFilteredList(
       list.filter((contact) => {
         return (
-          contact.name.includes(search) ||
-          contact.surname.includes(search) ||
+          contact.name.toLocaleLowerCase().includes(search) ||
+          contact.surname.toLocaleLowerCase().includes(search) ||
           contact.number.toString().includes(search)
         );
       })
@@ -91,27 +91,21 @@ export default function App() {
         </Container>
       ) : (
         <Container className="mt-4">
-          <Row>
-            <Col>
-              <h2>Contatti</h2>
-              <Search handleSearch={handleSearch} />
-              <Contacts list={filteredList} handleClick={handleClick} />
-              <br />
-              <Button id="new" name="new" onClick={() => handleNew()}>
-                Nuovo
-              </Button>
-            </Col>
-            <Col>
-              {showContactDetails === true && (
-                <Details
-                  contact={selectedContact}
-                  handleClose={handleClose}
-                  handleUpdate={handleUpdate}
-                  handleDelete={handleDelete}
-                />
-              )}
-            </Col>
-          </Row>
+          <h2>Contatti</h2>
+          <Search handleSearch={handleSearch} />
+          <Contacts list={filteredList} handleClick={handleClick} />
+          <br />
+          <Button id="new" name="new" onClick={() => handleNew()}>
+            Nuovo
+          </Button>
+          {showContactDetails === true && (
+            <Details
+              contact={selectedContact}
+              handleClose={handleClose}
+              handleUpdate={handleUpdate}
+              handleDelete={handleDelete}
+            />
+          )}
         </Container>
       )}
     </>
