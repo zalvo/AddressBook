@@ -85,6 +85,7 @@ function Details(props) {
       >
         Elimina
       </Button>
+      {console.log("Details")}
     </div>
   );
 }
