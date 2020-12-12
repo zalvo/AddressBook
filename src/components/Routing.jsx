@@ -6,7 +6,6 @@ import Create from "./Create";
 import Search from "./Search";
 import Container from "react-bootstrap/Container";
 import { Button } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Switch, useHistory } from "react-router-dom";
 
 export default function Routing() {

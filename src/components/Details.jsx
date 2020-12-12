@@ -32,7 +32,7 @@ function Details(props) {
 
   return (
     <div>
-      <h2>Informazioni contatto</h2>
+      <h2>{name + " " + surname}</h2>
       <Form.Group>
         <Form.Label>ID</Form.Label>
         <Form.Control type="number" value={props.contact.id} disabled />
@@ -40,7 +40,7 @@ function Details(props) {
       <Form.Group>
         <Form.Label>Nome</Form.Label>
         <Form.Control
-          value={props.contact.name}
+          value={name}
           onChange={(e) => {
             setName(e.target.value);
           }}
@@ -83,7 +83,7 @@ function Details(props) {
         variant="danger"
         onClick={() => props.handleDelete(props.contact.id)}
       >
-        Elimina
+        Elimina contatto
       </Button>
       {console.log("Details")}
     </div>
